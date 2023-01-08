@@ -15,7 +15,7 @@ branch="main"
 
 prCommentResolverCommit=2
 
-title="chatroom UI complete"
+title="made code more modular & add the user active status"
 description=""
 developer="Abhinay Narayan Singh"
 currentdate=`date +%d-%b-%Y`
