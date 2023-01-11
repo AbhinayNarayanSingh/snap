@@ -15,7 +15,7 @@ branch="main"
 
 prCommentResolverCommit=2
 
-title="code refactor, add dialog and loader"
+title="useform package integrated"
 description=""
 developer="Abhinay Narayan Singh"
 currentdate=`date +%d-%b-%Y`

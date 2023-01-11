@@ -9,21 +9,21 @@ import { close_dialog } from "../../store/saga/Dialog";
 import Alert from "./Alert/Alert";
 
 const Dialog = () => {
-  const { open, props } = useSelector((state) => state.dialog);
+  const { open, props, key } = useSelector((state) => state.dialog);
   const dispatch = useDispatch();
 
   const disableScroll = () => document.body.style.overflow = "hidden"
   const enableScroll = () => document.body.style.overflow = "auto"
 
   useEffect(() => {
-    if(open && props?.key){
+    if(open && key){
       disableScroll()
     }
   }, [open])
   
 
   let dialogContent = null;
-  switch (props?.key) {
+  switch (key) {
     case "SUCCESS_DIALOG":
       dialogContent = <Alert/>;
       break;
@@ -32,7 +32,7 @@ const Dialog = () => {
 
   return (
     <>
-      {open && props?.key && (
+      {open && key && (
         <div>
           <div className="dialog-container">
             <div className="dialog-content-container">

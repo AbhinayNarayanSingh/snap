@@ -3,7 +3,9 @@ import { OPEN_DIALOG_WORKER, CLOSE_DIALOG_WORKER, OPEN_LOADER_WORKER, CLOSE_LOAD
 
 export const initialState = {
     user : {},
-    dialog: {},
+    dialog: {
+        key: null
+    },
     loader: {},
 }
 
