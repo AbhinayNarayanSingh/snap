@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from "react";
-import { DEFAULT_AVATAR, SEND_ICON } from '../Environment';
+import { DEFAULT_AVATAR, SEND_ICON } from '../../Environment';
 
 
 const ChatRoom = () => {

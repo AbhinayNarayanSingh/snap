@@ -1,5 +1,5 @@
 import React from 'react'
-import { DEFAULT_AVATAR, SEARCH_ICON } from "../Environment";
+import { DEFAULT_AVATAR, SEARCH_ICON } from "../../Environment";
 
 
 const ChatsList = () => {
