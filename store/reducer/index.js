@@ -2,7 +2,9 @@ import { user} from "../staticState"
 import { OPEN_DIALOG_WORKER, CLOSE_DIALOG_WORKER, OPEN_LOADER_WORKER, CLOSE_LOADER_WORKER } from "../constants"
 
 export const initialState = {
-    user : user,
+    user : {},
+    dialog: {},
+    loader: {},
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -12,7 +14,8 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 dialog: {
                     open: true,
-                    props: action.payload
+                    key: action.payload.key,
+                    props: action.payload.data
                 }
             }
             case CLOSE_DIALOG_WORKER:

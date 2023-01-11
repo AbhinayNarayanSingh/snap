@@ -7,16 +7,16 @@ import { Provider } from "react-redux";
 import { wrapper, store } from "../store/store"
 
 // component
-// import Dialog from '../hoc/Popup/Dialog';
-// import Loader from '../hoc/Loader/Loader';
+import Dialog from '../hoc/Popup/Dialog';
+import Loader from '../hoc/Loader/Loader';
 
 
 
 
 function MyApp({ Component, pageProps }) {
   return <Provider store={store}>
-    {/* <Loader />
-    <Dialog /> */}
+    <Loader />
+    <Dialog />
     <Component {...pageProps} />
 
   </Provider>

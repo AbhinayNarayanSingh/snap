@@ -15,7 +15,7 @@ branch="main"
 
 prCommentResolverCommit=2
 
-title="code refactor and redux integrated"
+title="code refactor, add dialog and loader"
 description=""
 developer="Abhinay Narayan Singh"
 currentdate=`date +%d-%b-%Y`
