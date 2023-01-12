@@ -49,22 +49,24 @@ const Signin = () => {
   ];
 
   return (
-    <div className='container-xxl'>
-      Signin
-      <button onClick={() => setLoginViaEmail((state) => !state)}>sign in via phone</button>
-      <form onSubmit={handleSubmit(signUpHandler, errorHandler)}>
-        {loginViaEmail ? 
-        <Input
+    <div className='container-fluid sign-bck'>
+      <div className="sign-container col-12 col-md-2">
+        <h2>Sign In</h2>
+        <form onSubmit={handleSubmit(signUpHandler, errorHandler)}>
+          {loginViaEmail ? 
+          <Input
           formFeilds={signInEmailFormFeilds}
           register={register}
-        ></Input>
-        :
-        <Input
+          ></Input>
+          :
+          <Input
           formFeilds={signInPhoneFeilds}
           register={register}
-        ></Input>}
-        <button type='submit'>submit</button>
-      </form>
+          ></Input>}
+          <button type='submit'>Submit</button>
+        </form>
+        <button onClick={() => setLoginViaEmail((state) => !state)} className="option-btn">Login via Phone</button>
+      </div>
 
     </div>
   )

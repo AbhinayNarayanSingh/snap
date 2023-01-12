@@ -16,7 +16,7 @@ const sign = () => {
     }
   }, [user])
 
-  const [currentPage, setCurrentPage] = useState("SIGNIN")
+  const [currentPage, setCurrentPage] = useState("SIGNUP")
 
   switch (currentPage) {
     case "SIGNIN":

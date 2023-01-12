@@ -15,7 +15,7 @@ branch="main"
 
 prCommentResolverCommit=2
 
-title="useform package integrated"
+title="work on form feilds styling"
 description=""
 developer="Abhinay Narayan Singh"
 currentdate=`date +%d-%b-%Y`

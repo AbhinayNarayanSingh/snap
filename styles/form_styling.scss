@@ -1,0 +1,85 @@
+$color1 : royalblue;
+$white : white;
+
+$input-border: 1.5px solid #D8DADC;;
+$input-border-focus: 1.5px solid royalblue;
+
+.form-row{
+    display: flex;
+    gap: 1rem;
+}
+
+.form-feilds{
+    margin-bottom: 1rem;
+    
+    .feild-label{
+        display: block;
+        margin-bottom: .5rem;
+        font-size: .9rem;
+        font-weight: 600;
+    }
+    
+    input, select {
+        border: $input-border;
+        font-size: 1rem;
+        padding: .5rem;
+        width: -webkit-fill-available;
+        border-radius: .5rem;
+    }
+    
+    input:focus, 
+    select:focus {
+        border: $input-border-focus;
+    }
+    
+    .required-feild::after {
+        content: "*";
+        color: red;
+        padding-left: .1rem;
+    }
+
+    
+}
+.form-feilds-checkbox {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    
+    .feild-label{
+        font-size: 1rem;
+        // font-weight: 600;
+        padding-left: .5rem;
+    }
+    
+    input{
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+form button {
+    margin: 1rem 0;
+    background-color: $color1;
+    color: $white;
+    width: 100px;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+}
+.option-btn {
+    margin: 1rem 0;
+    border: 2px solid $color1;
+    color: $color1;
+    background-color: transparent;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+
+}
