@@ -3,6 +3,7 @@ $white : white;
 
 $input-border: 1.5px solid #D8DADC;;
 $input-border-focus: 1.5px solid royalblue;
+$input-border-error: 1.5px solid red;
 
 .form-row{
     display: flex;
@@ -11,6 +12,7 @@ $input-border-focus: 1.5px solid royalblue;
 
 .form-feilds{
     margin-bottom: 1rem;
+    position: relative;
     
     .feild-label{
         display: block;
@@ -36,6 +38,19 @@ $input-border-focus: 1.5px solid royalblue;
         content: "*";
         color: red;
         padding-left: .1rem;
+    }
+
+    .invalid-input{
+        border: $input-border-error;
+    }
+    span {
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        font-size: 0.7rem;
+        color: red;
+        text-transform: uppercase;
+        font-weight: 600;
     }
 
     

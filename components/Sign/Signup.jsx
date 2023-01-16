@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Input from '../../hoc/Input'
 
@@ -20,11 +21,12 @@ const Signup = () => {
   };
 
 
+
   const signUpFormFeilds = [
      {
       type: "text",
       name: "firstname",
-      label : "First Name"
+      label : "First Name",
     },
     {
       type: "text",
@@ -34,47 +36,41 @@ const Signup = () => {
     {
       type: "tel",
       name: "phone",
-      label : "Phone"
+      label : "Phone",
+      validation : {
+        pattern: {
+          value: /[0-9]{10}/,
+          message: "Please enter a valid phone number"
+        }
+      }
     },
     {
       type: "email",
       name: "email",
       label: "Email",
+      validation: {
+        pattern: {
+          value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+          message: 'Please enter a valid email address',
+      },
+      }
     },
     {
       type: "password",
       name: "password",
       label: "Password",
+      validation: {
+        pattern: {
+          value: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+          message: 'Password must be at least 8 characters and include one special character',
+      },
+      }
     },
     {
       type: "text",
       name: "telegranchat_id",
       label : "Telegram Chat ID",
       required : false
-    },
-    {
-      type: "select",
-      name: "country",
-      label : "Country",
-      option: [
-          {
-            label : "India",
-            value : "in"
-          },
-          {
-            label : "United States of America",
-            value : "us"
-          },
-          {
-            label : "Canada",
-            value : "ca"
-          },
-        ]
-    },
-    {
-      type: "checkbox",
-      name: "t&c",
-      label : <>I accept the terms and privacy policy</>
     },
   ];
   
@@ -86,6 +82,7 @@ const Signup = () => {
           <Input
             formFeilds={signUpFormFeilds}
             register={register}
+            errors={errors}
           ></Input>
           <button type='submit'>Submit</button>
         </form>

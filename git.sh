@@ -15,7 +15,7 @@ branch="main"
 
 prCommentResolverCommit=2
 
-title="work on form feilds styling"
+title="work on useform regex validation"
 description=""
 developer="Abhinay Narayan Singh"
 currentdate=`date +%d-%b-%Y`
