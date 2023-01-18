@@ -1,4 +1,5 @@
 import { all } from "redux-saga/effects";
+import { auth_watcher } from "./Auth";
 import {dialog_watcher } from "./Dialog";
 import { loader_watcher } from "./Loader";
 
@@ -6,7 +7,7 @@ import { loader_watcher } from "./Loader";
 export function* rootSaga() {
     yield all([
         dialog_watcher(),
-        loader_watcher()
-        
+        loader_watcher(),
+        auth_watcher(),
     ])
 } 

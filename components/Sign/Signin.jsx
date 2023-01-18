@@ -1,19 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import Input from '../../hoc/Input'
+import { SignInAction } from '../../store/saga/Auth';
 
-const Signin = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-
+const Signin = ({setCurrentPage}) => {
+  const {register, handleSubmit, formState: { errors },} = useForm();
+  const dispatch = useDispatch()
 
   const signUpHandler = (data) => {
-    console.log(data, "data");
-    console.log(errors, "formState > errors");
+    data["operation"] = loginViaEmail ? 1 : 2
+    dispatch(SignInAction(data))
+    console.log(data);
   };
 
   const errorHandler = () => {
@@ -48,24 +46,43 @@ const Signin = () => {
     }
   ];
 
+
   return (
     <div className='container-fluid sign-bck'>
-      <div className="sign-container col-12 col-md-2">
-        <h2>Sign In</h2>
+
+      <div className="sign-container sign-in col-12 col-md-6">
+        <h2>Testing</h2>
+        <button onClick={()=> setCurrentPage("SIGNUP")} className="my-1 btn-text">Don’t have an account?  <span> Sign up</span></button>
+
         <form onSubmit={handleSubmit(signUpHandler, errorHandler)}>
           {loginViaEmail ? 
-          <Input
-          formFeilds={signInEmailFormFeilds}
-          register={register}
-          ></Input>
+            <Input
+            formFeilds={signInEmailFormFeilds}
+            register={register}
+            ></Input>
           :
-          <Input
-          formFeilds={signInPhoneFeilds}
-          register={register}
-          ></Input>}
-          <button type='submit'>Submit</button>
+            <Input
+            formFeilds={signInPhoneFeilds}
+            register={register}
+            ></Input>
+          }
+          <label className="toggle" htmlFor="myToggle">
+            <input className="toggle__input" name="" type="checkbox" id="myToggle" onChange={(e) => setLoginViaEmail((state) => !state)}/>
+            <div className="toggle__fill"></div>
+            <span>
+              Login via {loginViaEmail ? "Phone" : "Email"}
+            </span>
+          </label>
+          <button type='submit'>Sign in</button>
         </form>
-        <button onClick={() => setLoginViaEmail((state) => !state)} className="option-btn">Login via Phone</button>
+
+        <button className='btn-text'>Forgot password?</button>
+
+        <div className="other-social-sign-in-option">
+          <span className='or my-1'>Other sign in options</span>
+
+        </div>
+
       </div>
 
     </div>

@@ -1,6 +1,7 @@
 export const APP_NAME = "Snap";
 export const APP_LOGO = ["", "snap"]
 export const APP_URL = "http://localhost:8080/";
+export const API_HOST = "http://localhost:9090";
 
 export const SEARCH_ICON = ["./img/icon/search.svg", "search"]
 export const SEND_ICON = ["./img/icon/send.svg", "search"]

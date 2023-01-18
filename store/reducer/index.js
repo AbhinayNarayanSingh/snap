@@ -1,12 +1,21 @@
 import { user} from "../staticState"
-import { OPEN_DIALOG_WORKER, CLOSE_DIALOG_WORKER, OPEN_LOADER_WORKER, CLOSE_LOADER_WORKER } from "../constants"
+import { OPEN_DIALOG_WORKER, CLOSE_DIALOG_WORKER, OPEN_LOADER_WORKER, CLOSE_LOADER_WORKER, SIGNIN_WORKER, SIGNIN_FAIL_WORKER } from "../constants"
 
 export const initialState = {
     user : {},
     dialog: {
         key: null
     },
-    loader: {},
+    loader: {
+        
+    },
+    toast : {
+        open: false,
+        label: {
+            type: "warning",
+            msg: "Email address isn't associated with this account."
+        }
+    }
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -41,6 +50,10 @@ const rootReducer = (state = initialState, action) => {
                         open: false,
                     }
             }
+            case SIGNIN_WORKER:
+                return {...state, user: action.payload}
+            case SIGNIN_FAIL_WORKER:
+                return {...state, user: action.payload}
                 
         default: {
             return { ...state }

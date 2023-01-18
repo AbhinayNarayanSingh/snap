@@ -16,14 +16,14 @@ const sign = () => {
     }
   }, [user])
 
-  const [currentPage, setCurrentPage] = useState("SIGNUP")
+  const [currentPage, setCurrentPage] = useState("SIGNIN")
 
   switch (currentPage) {
     case "SIGNIN":
-      return <Signin/>
+      return <Signin setCurrentPage={setCurrentPage}/>
 
     case "SIGNUP":
-      return <Signup/>
+      return <Signup setCurrentPage={setCurrentPage}/>
   }
 }
 

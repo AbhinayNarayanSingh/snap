@@ -9,6 +9,7 @@ import { wrapper, store } from "../store/store"
 // component
 import Dialog from '../hoc/Popup/Dialog';
 import Loader from '../hoc/Loader/Loader';
+import Toast from '../hoc/Toast/Toast';
 
 
 
@@ -16,6 +17,7 @@ import Loader from '../hoc/Loader/Loader';
 function MyApp({ Component, pageProps }) {
   return <Provider store={store}>
     <Loader />
+    <Toast/>
     <Dialog />
     <Component {...pageProps} />
 

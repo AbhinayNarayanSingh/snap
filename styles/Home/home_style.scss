@@ -39,7 +39,7 @@
             font-weight: 700;
             font-size: 34px;
             line-height: 41px;
-            color: #000000;
+            color: $primary-color;
         }
     }
 
@@ -60,7 +60,7 @@
             content: "";
             width: .75rem;
             height: .75rem;
-            background: #007AFF;;
+            background: $primary-color;
             border-radius: 100%;
             position: absolute;
             left: .5rem;
@@ -77,7 +77,7 @@
         h2{
             font-size: 17px;
             line-height: 22px;
-            color: #000000;
+            color: $primary-color;
             font-weight: 600;
         }
 
@@ -114,14 +114,14 @@
             border-radius: 15px;
             font-size: 17px;
             line-height: 22px;
-            color: #000000;
+            color: $primary-color;
             padding: .5rem 1rem;
             margin-bottom: .5rem;
             max-width: 75%;
             width: fit-content;
         }
         .you {
-            background: #007AFF;
+            background: $primary-color;
             color: #FFFFFF;
             align-self: flex-end;
         }
@@ -151,7 +151,7 @@
         h2{
             font-size: .8rem;
             line-height: 1rem;
-            color: #000000;
+            color: $primary-color;
             margin-top: .5rem;
         }
         .avatar-container{

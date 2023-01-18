@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Input from '../../hoc/Input'
 
-const Signup = () => {
+const Signup = ({setCurrentPage}) => {
   const {
     register,
     handleSubmit,
@@ -78,14 +77,17 @@ const Signup = () => {
     <div className='container-fluid sign-bck'>
       <div className="sign-container col-12 col-md-6">
         <h2>Testing</h2>
+        <button onClick={()=> setCurrentPage("SIGNIN")} className="my-1 btn-text">Already have an account?  <span> Sign in</span></button>
+
         <form onSubmit={handleSubmit(signUpHandler, errorHandler)}>
           <Input
             formFeilds={signUpFormFeilds}
             register={register}
             errors={errors}
           ></Input>
-          <button type='submit'>Submit</button>
+          <button type='submit'>Continue</button>
         </form>
+
       </div>
 
     </div>

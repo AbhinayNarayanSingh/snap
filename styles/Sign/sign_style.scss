@@ -7,19 +7,32 @@
     align-items: center;
 
     .sign-container{
-        max-width: 500px;
+        max-width: 450px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 2rem;
 
         h2{
             font-size: 2rem;
             font-weight: 600;
             text-align: center;
-            padding-top: 2rem;
-        }
-        form {
-            padding: 2rem 3rem;
         }
 
     }
+
+    .other-social-sign-in-option{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .or {
+            font-size: .85rem;
+            line-height: 125%;
+            color: rgba(0, 0, 0, 0.7);
+        }
+    }
 }
+

@@ -1,9 +1,9 @@
 $color1 : royalblue;
 $white : white;
 
-$input-border: 1.5px solid #D8DADC;;
-$input-border-focus: 1.5px solid royalblue;
-$input-border-error: 1.5px solid red;
+$input-border: 1px solid #D8DADC;
+$input-border-focus: 1px solid royalblue;
+$input-border-error: 1px solid red;
 
 .form-row{
     display: flex;
@@ -24,7 +24,7 @@ $input-border-error: 1.5px solid red;
     input, select {
         border: $input-border;
         font-size: 1rem;
-        padding: .5rem;
+        padding: 1rem;
         width: -webkit-fill-available;
         border-radius: .5rem;
     }
@@ -73,28 +73,67 @@ $input-border-error: 1.5px solid red;
 }
 
 
-
-
-
-
-
-
-
 form button {
     margin: 1rem 0;
-    background-color: $color1;
+    background-color: black;
     color: $white;
     width: 100px;
-    padding: .5rem 1rem;
+    padding: 1rem;
     border-radius: 10px;
-}
-.option-btn {
-    margin: 1rem 0;
-    border: 2px solid $color1;
-    color: $color1;
-    background-color: transparent;
     font-weight: 600;
-    padding: .5rem 1rem;
-    border-radius: 10px;
+    width: -webkit-fill-available;
+}
 
+.btn-text{
+    background: transparent;
+    span{
+        font-weight: 600;
+    }
+}
+
+.toggle {
+    --width: 40px;
+    --height: calc(var(--width) / 2);
+    --border-radius: calc(var(--height) / 2);
+
+    cursor: pointer;
+    display: flex;
+    
+    & span{
+        font-size: .9rem;
+        font-weight: 600;       
+        padding-left: 1rem;
+    }
+
+    .toggle__input {
+        display: none;
+    }
+
+    .toggle__fill {
+        position: relative;
+        width: var(--width);
+        height: var(--height);
+        border-radius: var(--border-radius);
+        background: #dddddd;
+        transition: background 0.2s;
+    }
+    .toggle__fill::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: var(--height);
+        width: var(--height);
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        border-radius: var(--border-radius);
+        transition: transform 0.2s;
+    }
+    .toggle__input:checked ~ .toggle__fill {
+        background: black;
+    }
+
+    .toggle__input:checked ~ .toggle__fill::after {
+        transform: translateX(var(--height));
+    }
 }
