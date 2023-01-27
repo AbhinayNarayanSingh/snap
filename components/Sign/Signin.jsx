@@ -30,7 +30,7 @@ const Signin = ({setCurrentPage}) => {
       type: "password",
       name: "password",
       label: "Password",
-    }
+    },
   ];
   
   const signInPhoneFeilds = [
@@ -67,7 +67,7 @@ const Signin = ({setCurrentPage}) => {
             ></Input>
           }
           <label className="toggle" htmlFor="myToggle">
-            <input className="toggle__input" name="" type="checkbox" id="myToggle" onChange={(e) => setLoginViaEmail((state) => !state)}/>
+            <input className="toggle__input" type="checkbox" id="myToggle" onChange={(e) => setLoginViaEmail((state) => !state)}/>
             <div className="toggle__fill"></div>
             <span>
               Login via {loginViaEmail ? "Phone" : "Email"}
@@ -76,12 +76,7 @@ const Signin = ({setCurrentPage}) => {
           <button type='submit'>Sign in</button>
         </form>
 
-        <button className='btn-text'>Forgot password?</button>
-
-        <div className="other-social-sign-in-option">
-          <span className='or my-1'>Other sign in options</span>
-
-        </div>
+        <button className='btn-text' onClick={()=>setCurrentPage("FORGOT_PASSWORD")}>Forgot password?</button>
 
       </div>
 

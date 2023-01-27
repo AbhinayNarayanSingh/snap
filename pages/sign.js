@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 // component
 import Signin from '../components/Sign/Signin'
 import Signup from '../components/Sign/Signup'
+import RecoverPassword from '../components/Sign/RecoverPassword'
 
 const sign = () => {
   const router = useRouter()
@@ -24,6 +25,8 @@ const sign = () => {
 
     case "SIGNUP":
       return <Signup setCurrentPage={setCurrentPage}/>
+      case "FORGOT_PASSWORD":
+      return <RecoverPassword setCurrentPage={setCurrentPage}/>
   }
 }
 

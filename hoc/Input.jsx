@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { countryCode } from './CountryCodes';
 
 
 const Input = ({formFeilds, register, errors}) => {
     useEffect(() => {
         console.log(errors, "error +++");
-    
       }, [errors])
+
+      const [selectedCountry, setSelectedCountry] = useState("")
     return (
         <>
             {formFeilds.map((item, index) => {
@@ -61,6 +63,38 @@ const Input = ({formFeilds, register, errors}) => {
                             </div>
                         )
 
+                    case "radio":
+                        // {
+                        //     type: "radio",
+                        //     name: "shape-of-button",
+                        //     label: "What is the shape of a radio button’s selector?",
+                        //     option: [
+                        //       {
+                        //         label: "Square",
+                        //       },
+                        //       {
+                        //         label: "circle",
+                        //       },
+                        //       {
+                        //         label: "hexagon",
+                        //       },
+                        //     ]
+                        //   }
+                        return (
+                            <div key={index}>
+                                <p>{label}</p>
+                                {option && option.map((i, index) => {
+                                    const {label} = i
+                                    return (
+                                        <label htmlFor={label} className='html_input_radio' key={index}>
+                                            <input type="radio" {...register(name, {...validation})} id={label} required={required} className='radio_input' />
+                                            {label}
+                                        </label>
+                                    )
+                                })}
+                            </div>
+                        )
+                        
                     case "select":
                         // {
                         //     type: "select",
@@ -93,6 +127,28 @@ const Input = ({formFeilds, register, errors}) => {
                                 <span>{errors?.[name]?.message}</span>
                                 <input type={type} {...register(name, {...validation})} id={name} />    
                                 <label htmlFor={name} className={`feild-label`}>{label}</label>
+                            </div>
+                        )
+
+                    case "mobile": 
+                        return (
+                            <div className={`mobile-form-feilds ${className}`} key={index}>
+                                <label htmlFor={name} className={`feild-label`}>Mobile</label>
+                                <div className="input row">
+                                    <p>{selectedCountry.dial_code} {selectedCountry.name}</p>
+                                        
+                                    <select name="" id="" className='col-3' onChange={(event) => setSelectedCountry(countryCode[event.target.selectedIndex])
+}>
+                                        {countryCode.map((item, index) => {
+                                            return (
+                                                <option value={item.name} dial-code={item.dial_code} key={index}>
+                                                    {item.name}
+                                                </option>
+                                            )
+                                        })}
+                                    </select>
+                                    <input type="text" className='col-8'/>
+                                </div>
                             </div>
                         )
                 }
